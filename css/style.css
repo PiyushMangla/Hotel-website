@@ -1,0 +1,733 @@
+html{
+font-size: 62.5%;
+box-sizing: border-box;
+}
+body{
+margin: 0;
+padding: 0;
+font-family: 'Montserrat', sans-serif;
+}
+/* navbar*/
+/* sidebar*/
+.sidebar{
+    width: 8rem;
+    height: 100%;
+    background-color: #eee;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+
+}
+.menuicon{
+    margin-top: 3rem;
+    cursor: pointer;
+    
+}
+.line{
+    width: 2.5rem;
+    height: .2rem;
+    background-color: #222;
+    margin-bottom: .6rem;
+}
+.line1, .line3{
+    width: 1.8rem;
+    transition: all .3s;
+}
+.menuicon:hover .line{
+    width: 2.5rem;
+}
+.socialicon{
+    list-style: none;
+    padding: 0;
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.socialink{
+    font-size: 2rem;
+    color: #777;
+    transition: color .3s;
+}
+.socialink:hover{
+    color: orange;
+}
+.year{
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    color: #555;
+}
+/* end of sidebar*/
+/*navigation*/
+.navigation{
+    left: -32rem;
+    height: 100%;
+    width: 40rem;
+    position: fixed;
+    background: linear-gradient(to top, rgba(34,31,41,1), rgba(34,31,41,.8)) , url("../img/navbg.jpg") center no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: left .8s cubic-bezier(1,0,0,1);
+    z-index: 5;
+}
+.navheading{
+    font-family: 'Josefin Sans' sans-serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: #deaa86;
+    letter-spacing: .2rem;
+    text-align: center;
+
+}
+.navsearch{
+    position: relative;
+}
+.navsearchinput{
+    width: 30rem;
+    padding: 1rem 2rem;
+    background-color: rgba(0,0,0,.3);
+    font-family: 'Josefin Sans' sans-serif;
+    font-size: 1.6rem;
+    color: #deaa86;
+    letter-spacing: .6rem;
+    outline: none;
+    border: .1rem solid #555;
+    border-radius: 10rem;
+    transition: background-color .3s;
+}
+.navsearchinput:focus {
+    background-color: rgba(0,0,0,.1);
+}
+.navbutton{
+    border: none;
+    background-color: transparent;
+    color: #deaa86;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    transition: outline .3s;
+}
+.navbutton:focus{
+    outline: none;
+}
+.navlist{
+    list-style: none;
+    padding: 0;
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.navitem{
+    position: relative;
+}
+.navlink{
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 400;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color .5s;
+}
+.navlink::before{
+    content: "";
+    width: 0rem;
+    background-color: #deaa86;
+    height: .1rem;
+    position: absolute;
+    top: 1rem;
+    left: -4rem;
+    transition: width .5s cubic-bezier(1, 0, 0, 1);
+}
+.navlink::after{
+    content: "";
+    width: 0rem;
+    background-color: #deaa86;
+    height: .1rem;
+    position: absolute;
+    top: 1rem;
+    right: -4rem;
+    transition: width .5s cubic-bezier(1, 0, 0 ,1);
+}
+.navlink:hover {
+    color: #deaa86;
+}
+.navlink:hover::after,
+.navlink:hover::before{
+    width: 3rem;
+}
+.copyright{
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    color: white;
+}
+.checkbox:checked ~ .navigation{
+    left: 8rem;
+}
+.checkbox{
+    display: none;
+}
+.checkbox:checked ~ .sidebar .line1{
+    transform: rotate(-405deg) translate(-5px,6px);
+}
+.checkbox:checked ~ .sidebar .line3{
+    transform: rotate(405deg) translate(-5px,-6px);
+}
+.checkbox:checked ~ .sidebar .line2{
+    opacity: 0;
+}
+
+/* end of navigation*/
+/* end of navbar*/
+/*start of header*/
+.header{
+    margin-left: 8rem;
+    height: 100vh;
+    background: linear-gradient(to top ,rgba(0,0,0,.6), rgba(0,0,0,.5)),url(../img/header1.jpg) no-repeat center;
+    background-size: cover;
+
+}
+.headerbrand{
+    display: flex;
+    cursor: pointer;
+}
+.brandheading{
+    font-family: 'Josefin Sans' sans-serif;
+    font-weight: 400;
+    color: #deaa86;
+    letter-spacing: .2rem;
+    font-size: 2.6rem;
+}
+.headerbanner{
+    color: #ddd;
+    height: 50rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.bannerheading{
+    font-family: 'Josefin Sans' sans-serif;
+    font-size: 7rem;
+    font-weight: 400;
+    margin-bottom: 0;
+    animation: anim 2s;
+}
+.bannerpara{
+    font-family: 'Josefin Sans' sans-serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    animation: anim 1.5s .5s backwards;
+}
+.bannerbutton{
+    width: 21rem;
+    padding: 1.5rem 2rem;
+    color: #333;
+    font-size: 2rem;
+    letter-spacing: .5rem;
+    border-radius: 10rem;
+    border: none;
+    outline: none;
+    background: linear-gradient(to right , gold, goldenrod);
+    cursor: pointer;
+    animation: anim 1s 1s backwards;
+}
+.bannerbutton:hover{
+    background: linear-gradient(to left , gold, goldenrod);
+}
+.bannerbutton:active{
+    transform: translateY(.2rem);
+}
+@keyframes anim{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+/*end of header*/
+/* abous us*/
+.aboutus{
+    margin-left: 8rem;
+    display: flex;
+    background-color: #ddd;
+}
+.aboutcontent{
+    flex: 0 1 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10rem;
+    box-sizing: border-box;
+}
+.aboutheading{
+    font-family: 'Josefin Sans' sans-serif;
+    font-size: 4rem;
+    font-weight: 300;
+    color: #555;
+    text-transform: uppercase;
+}
+.smallline{
+    width: 9rem;
+    height: .2rem;
+    margin: 0 auto 1rem auto;
+    background-color: lightsalmon;
+}
+.upperline{
+    width: 20rem;
+    height: .2rem;
+    margin: auto;
+    background-color: lightsalmon;
+}
+.ussubheading{
+    font-family: 'Josefin Sans' sans-serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: lightsalmon;
+    letter-spacing: .2rem;
+    text-transform: uppercase;
+}
+.uspara{
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 5rem;
+}
+.usbutton{
+    width: 17rem;
+    font-family: 'Josefin Sans' sans-serif;
+    padding: .7rem .5rem;
+    background-color: transparent;
+    font-size: 1.2rem;
+    color: lightsalmon;
+    letter-spacing: .5rem;
+    border-radius: 1.5rem;
+    text-transform: uppercase;
+    border: .1rem solid lightsalmon;
+    outline: none;
+    cursor: pointer;
+}
+.btnarrow{
+    margin-left: .5rem;
+    transition: margin-left 1s;
+}
+.usbutton:hover .btnarrow{
+    margin-left: 1.5rem;
+}
+.usimg{
+    flex: 1 1;
+    position: relative;
+}
+.img{
+    width: 32rem;
+    height: 25rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    box-shadow: 0 3rem 6rem rgba(0,0,0,.4);
+    border-radius: .4rem;
+    border: .2rem solid lightsalmon;
+}
+.img1{
+    transform: translate(-20%,-90%);
+}
+
+.img2{
+    transform: translate(-70%,-70%);
+}
+.img3{
+    transform: translate(-50%,-50%);
+}
+.img4{
+    transform: translate(-30%,-30%);
+}
+/* end of about us*/
+.commonheader{
+    padding: 6rem;
+    text-align: center;
+    color: lightsalmon;
+}
+.commonheading{
+    font-size: 4rem;
+    letter-spacing: .2rem;
+    font-weight: 300;
+
+}
+
+/*rooms*/
+.room{
+    margin-left: 8rem;
+}
+.roomwrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.roomcard{
+    width: 50rem;
+    margin: 6rem;
+    background-color: #15141b;
+    box-shadow: 0 3rem 6rem rgba(0,0,0,.4);
+}
+.roomcardimg{
+    width: 100%;
+}
+.roomcontent{
+    color: #ddd;
+    padding: 2rem;
+}
+.roomcardheading{
+    font-size: 3rem;
+    font-weight: 300;
+    margin: 0;
+}
+.roomcardpara{
+    font-size: 1.5rem;
+    color: #777;
+}
+.roomprice{
+    font-size: 5rem;
+    font-weight: 300;
+    text-align: right;
+    margin: 0;
+}
+.roomcardbtn{
+    width: 17rem;
+    font-family: 'Josefin Sans' sans-serif;
+    padding: 1.5rem 1rem;
+    background-color: transparent;
+    font-size: 1.2rem;
+    color: lightsalmon;
+    letter-spacing: .5rem;
+    border-radius: 10rem;
+    text-transform: uppercase;
+    border: .1rem solid lightsalmon;
+    outline: none;
+    cursor: pointer;
+}
+.roombtnwrapper{
+    text-align: center;
+}
+.roombtn{
+    width: 20rem;
+    padding: 1.5rem 1rem;
+    margin: 4rem 0;
+    background-color: transparent;
+    text-transform: uppercase;
+    color: lightsalmon;
+    border: .2rem solid lightsalmon;
+    outline: none;
+    box-shadow: 0 1.5rem 6rem rgba(0,0,0,.3);
+    cursor: pointer;
+    border-radius: 10rem;
+    transition: all .3s;
+}
+.roombtn:hover{
+    color: #ddd;
+    background-color: lightsalmon;
+}
+/* end of rooms*/
+/*customers*/
+.customer{
+    margin-left: 8rem;
+    background-color: #15141b;
+    padding-bottom: 7rem;
+}
+.customerpara{
+    font-size: 2rem;
+    width: 50%;
+    margin: 2rem auto 8rem auto;
+    text-align: center;
+    color: #ddd;
+}
+.custcardwrap{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.custcard{
+    width: 50rem;
+    background-color: #eee;
+    height: 25rem;
+    box-shadow: 0 3rem 6rem rgba(0,0,0,.4);
+    display: flex;
+}
+.custimgwrap{
+    margin: auto 0;
+}
+.custimg{
+    width: 20rem;
+    margin-left: -1.3rem;
+    height: 14rem;
+    
+}
+.custinfo{
+    padding: 0 2rem;
+
+}
+.custname{
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 0;
+}
+.custpara1{
+    font-size: 1.2rem;
+    font-style: italic;
+    color: lightsalmon;
+}
+.custpara2{
+    font-size: 1.3rem;
+    font-style: italic;
+}
+
+/*end of customers*/
+/*footer*/
+.footer{
+    margin-left: 8rem;
+}
+.mainpart{
+    display: flex;
+    justify-content: space-between;
+    background-color: #1c1c1c;
+    padding: 4rem;
+}
+.footheading{
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: goldenrod;
+    margin: 1rem 0 3rem 0;
+}
+.footlist{
+    list-style: none;
+    padding: 0;
+}
+.footlistitem{
+    margin-bottom: 2rem;
+}
+.footitemlink{
+    font-size: 1.6rem;
+    color: #ddd;
+    text-decoration: none;
+}
+.contact p{
+    font-size: 1.6rem;
+    color: #ddd;
+    margin-bottom: 4rem;
+}
+.footform{
+    display: flex;
+}
+.footinput{
+    width: 25rem;
+    padding: 1rem;
+    font-family: 'Josefin Sans' sans-serif;
+    font-size: 1.8rem;
+    color: #444;
+    outline: none;
+}
+.footbtn{
+    padding: 1rem;
+    background-color: lightsalmon;
+    color: #ddd;
+    border: none;
+}
+.gallery{
+    max-width: 40rem;
+}
+.galleyimg{
+    display: flex;
+    flex-wrap: wrap;
+}
+.imgwrap{
+    width: 12rem;
+    margin: .4rem;
+    overflow: hidden;
+}
+.footimg{
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: all 1s;
+}
+.footimg:hover{
+    transform: scale(1.5);
+    opacity: .8;
+}
+.creator{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 4rem;
+    background-color: #222;
+}
+.copyrighttext{
+    font-size: 1.5rem;
+    color: #aaa;
+}
+.textright{
+    color: #bbb;
+    font-size: 1.6rem;
+}
+.textright i{
+    color: tomato;
+    font-size: 2rem;
+    margin: .5rem;
+}
+.textright span{
+    color: gold;
+}
+/*end of footer*/
+@media(max-width:1400px){
+    .custcardwrap{
+        flex-direction: column;
+        align-items: center;
+    }
+    .custcard:first-child{
+        margin-bottom: 2rem;
+    }
+    .mainpart{
+        flex-direction: column;
+    }
+    .footlist{
+        display: flex;
+    }
+    .footlistitem{
+        margin-right: 2rem;
+    }
+}
+@media(max-width:1200px){
+    .aboutus{
+        flex-direction: column;
+        padding-bottom: 18rem;
+    }
+    .aboutcontent{
+        margin-bottom: 20rem;
+    }
+    .img{
+        width: 25rem;
+    }
+}
+@media(max-width:900px){
+    .headerbanner{
+        text-align: center;
+    }
+    .bannerheading{
+        font-size: 4rem;
+    }
+    .bannerpara{
+        font-size: 3rem;
+    }
+    .bannerbutton{
+        width: 16rem;
+        font-size: 1.2rem;
+    }
+}
+@media(max-width:700px){
+    .custcard{
+        flex-direction: column;
+        width: 20rem;
+        height: 100%;
+    }
+    .custimg{
+        margin-left: 0;
+    }
+    .footlist{
+        display: block;
+    }
+    .creator{
+        flex-direction: column;
+        text-align: center;
+    }
+    .copyrighttext{
+        order: 1;
+    }
+}
+@media(max-width:500px){
+    .navigation{
+        width: 25rem;
+    }
+    .navsearchinput{
+        width: 20rem;
+    }
+    .headerbanner{
+        height: 100%;
+        margin-top: -10rem;
+    }
+    .brandheading{
+        margin: auto 0;
+        font-size: 2rem;
+    }
+    .bannerheading{
+        font-size: 2.5rem;
+        text-align: center;
+    }
+    .bannerpara{
+        font-size: 2rem;
+    }
+    .aboutus{
+        padding-bottom: 10rem;
+    }
+    .img{
+        width: 12rem;
+        height: 10rem;
+    }
+    .aboutheading{
+        font-size: 2.5rem;
+        text-align: center;
+    }
+    .ussubheading{
+        font-size: 2rem;
+        text-align: center;
+    }
+    .aboutcontent{
+        padding: 5rem;
+    }
+    .commonheading{
+        font-size: 2.5rem;
+    }
+    .smallline{
+        width: 5rem;
+    }
+    .upperline{
+        width: 10rem;
+    }
+    .roomcardheading{
+        font-size: 1.5rem;
+    }
+    .roomprice{
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        text-align: left;
+    }
+    .roomcardbtn{
+        width: 12rem;
+        padding: 1rem 5rem;
+        font-size: 1rems;
+    }
+    .customerpara{
+        font-size: 1.4rem;
+        width: 80%;
+    }
+    .mainpart{
+        padding: 2rem;
+    }
+    .footinput{
+        width: 15rem;
+    }
+    .imgwrap{
+        width: 8rem;
+    }
+}
